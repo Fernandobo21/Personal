@@ -687,6 +687,7 @@ function calendarDay(openDay) {
                     {
                         if (resultado[c].ScheduledStart == resultado[i].ScheduledStart)
                             act.ActivityCount++;
+                        //Ver
                     }
 					act.Id = resultado[i].ActivityId;
 					consultedActivityDay(act);
