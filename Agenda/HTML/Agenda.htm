@@ -1,0 +1,166 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Agenda CRM</title>
+    <link type="text/css" rel="Stylesheet" href="../WebResources/new_CSS_Estilos" />
+    <link type="text/css" rel="Stylesheet" href="../WebResources/new_CSS_jQueryUI1.9.0" />
+    <script type="text/javascript" src="../WebResources/ClientGlobalContext.js.aspx"></script>
+    <script type="text/javascript" src="../WebResources/new_JS_sdk.rest"></script>
+    <script type="text/javascript" src="../WebResources/new_JS_json2"></script>
+    <script type="text/javascript" src="../WebResources/new_JS_JQuery1.8.3"></script>
+    <script type="text/javascript" src="../WebResources/new_JS_JQueryUI"></script>
+    <script type="text/javascript" src="../WebResources/new_JS_Agenda"></script>
+    <script type="text/javascript" src="../WebResources/new_JS_FormatoFechas"></script>
+	<script type="text/javascript" src="../WebResources/new_JS_FormatoActividades"></script>
+</head>
+<body style="width:99%; height:600px;">
+	<div style="width:100%; height:4%;">
+        <div style="width:7%; height:100%; float:left;">
+            <button onclick="" type="button" style="width:100%; height:100%;" class="button" id="btnAtras" title="Atras"><</button>
+        </div>
+        <div style="width:30%; height:100%; float:left; text-align:center;">
+            <span id="titleSelectedCalendar">Aqui va el nombre de lo que haya seleccionado</span>
+        </div>
+        <div style="width:32%; height:100%; float:left; text-align:center;">
+            <marquee id="tituloCalendar" width="90%" scrolldelay="100" scrollamount="5" direction="left" loop="infinite">Aqui se veran noticias pasar</marquee>
+        </div>
+        <div style="width:18%; height:100%; float:left;">
+			<p id="actualDayTittle" class="tituloSecundario"></p>
+		</div>
+        <div style="width:5%; height:100%; float:left;">
+			<p id="actualHourTitle" class="tituloSecundario"></p>
+		</div>
+        <div style="width:7%; height:100%; float:left;">
+            <button onclick="" type="button" style="width:100%; height:100%;" class="button" id="btnAdelante" title="Adelante">></button>
+        </div>
+	</div>
+    <div style="width:100%; height:2px;"></div>
+	<div style="width:100%; height:92%;">
+        <div id="lateralMenu" class="curvedBorders" style="width:18%; height:99%; float:left; border:solid 1px #A5ACB5; background-color:#F3F3F3;">
+            <div style="width:100%; height:10px;"></div>
+            <div onclick="SwitchOnOffSetCalendar();" class="tituloTerciario" style="width:99%; height:5%; float:left; cursor:hand;">
+                <div style="width:5%; height:20px; float:left;">
+                    <img alt="" id="imgArrowCalendarType" src="/WebResources/new_GIF_Abajo" />
+                </div>
+                <div id="div1" style="width:93%; height:10%; float:left;">
+                    <span class="tituloSecundario">Tipo Calendario</span>
+                </div>
+            </div>
+            <div style="clear:both; padding-left:10px;">
+                <div style="width:98%; float:left; background-color: #a7cdf0;" id="divMonthly" class="divFilters"  onclick="changeSelectedView(this.id);">
+                    <img style="padding-left:10px;" alt="Calendario Mensual" src="/WebResources/new_GIF_CalendarioMes"/><span style="padding-left:2px;" class="textoGenerico">Mensual</span>
+                    <div style="float:right;"><img id="CheckMonth" alt="" src="/WebResources/new_GIF_Check" /></div>
+                </div>
+            </div>
+            <div style="clear:both; padding-left:10px;">
+                <div style="width:98%; float:left; background-color: #a7cdf0;" id="divWeekly" class="divFilters"  onclick="changeSelectedView(this.id);">
+                    <img style="padding-left:10px;" alt="Calendario Semanal" src="/WebResources/new_GIF_CalendarioSemana"/><span style="padding-left:2px;" class="textoGenerico">Semanal</span>
+                    <div style="float:right;"><img id="CheckWeek" alt="" src="/WebResources/new_GIF_Check" /></div>
+                </div>
+            </div>
+            <div style="clear:both; padding-left:10px;">
+                <div style="width:98%; float:left; background-color: #a7cdf0;" id="divDaily" class="divFilters"  onclick="changeSelectedView(this.id);">
+                    <img style="padding-left:10px;" alt="Calendario Diario" src="/WebResources/new_GIF_CalendarioDia"/><span style="padding-left:2px;" class="textoGenerico">Diario</span>
+                    <div style="float:right;"><img id="CheckDay" alt="" src="/WebResources/new_GIF_Check" /></div>
+                </div>
+            </div>
+            <div style="clear:both; padding-left:10px;">
+                <div style="width:98%; float:left; background-color: #a7cdf0;" id="divWorking" class="divFilters"  onclick="changeSelectedView(this.id);">
+                    <img style="padding-left:10px;" alt="Calendario Laboral" src="/WebResources/new_PNG_CalendarioLaboral"/><span style="padding-left:2px;" class="textoGenerico">Laboral</span>
+                    <div style="float:right;"><img id="CheckWork" alt="" src="/WebResources/new_GIF_Check" /></div>
+                </div>
+            </div>
+            <div onclick="SwitchOnOffMiniCal();" class="tituloTerciario" style="width:99%; height:5%; float:left; cursor:hand;">
+                <div style="width:5%; height:20%; float:left;">
+                    <img alt="" id="imgArrowMiniCal" src="/WebResources/new_GIF_Derecha" />
+                </div>
+                <div id="divMiniCalSwitch" style="width:93%; height:10%; float:left;">
+                    <span class="tituloSecundario">Mini Calendario</span>
+                </div>
+            </div>
+            <div id="MiniCalendar" class="col_titulo" style="width:95%;">
+            </div>
+            <div onclick="SwitchOnOffActivities();" class="tituloTerciario" style="width:99%; height:5%; float:left; cursor:hand;">
+                <div style="width:5%; height:15%; float:left;">
+                    <img alt="" id="imgArrowFilters" src="/WebResources/new_GIF_Derecha" />
+                </div>
+                <div style="width:93%; height:15%; float:left;">
+                    <span class="tituloSecundario">Filtros</span>
+                </div>
+            </div>
+            <div style="clear:both; padding-left:10px;">
+                <div style="width:98%; float:left; background-color: #D4D4D4;" id="toggableTask" class="divFilters"  onclick="SelectedFilter(this.id);">
+                    <img style="padding-left:10px;" alt="Tarea Nueva" src="/_imgs/ico_16_4212.gif?ver=1561266035"/><span style="padding-left:2px;" class="textoGenerico">Tarea</span>
+                    <div style="float:right;"><img id="CheckTask" alt="" src="/WebResources/new_GIF_Check" /></div>
+                </div>
+            </div>
+            <div style="clear:both; padding-left:10px;">
+                <div style="width:98%; float:left; background-color: #D4D4D4;" id="toggableFax" class="divFilters" onclick="SelectedFilter(this.id);">
+                    <img style="padding-left:10px;" alt="Fax Nuevo" src="/_imgs/ico_16_4204.gif?ver=1561266035"/><span style="padding-left:2px;" class="textoGenerico">Fax</span>
+                    <div style="float:right;"><img id="CheckFax" alt="" src="/WebResources/new_GIF_Check" /></div>
+                </div>
+            </div>
+            <div style="clear:both; padding-left:10px;">
+                <div style="width:98%; float:left; background-color: #D4D4D4;" id="toggablePhoneCall" class="divFilters" onclick="SelectedFilter(this.id);">
+                    <img style="padding-left:10px;" alt="Llamada de Telefono Nueva" src="/_imgs/ico_16_4210.gif?ver=1561266035"/><span style="padding-left:2px;" class="textoGenerico">Llamada Telefonica</span>
+                    <div style="float:right;"><img id="CheckPhoneCall" alt="" src="/WebResources/new_GIF_Check" /></div>
+                </div>
+            </div>
+            <div style="clear:both; padding-left:10px;">
+                <div style="width:98%; float:left; background-color: #D4D4D4;" id="toggableEmail" class="divFilters" onclick="SelectedFilter(this.id);">
+                    <img style="padding-left:10px;" alt="Correo Electronico Nuevo" src="/_imgs/ico_16_4202.gif?ver=1561266035"/><span style="padding-left:2px;" class="textoGenerico">Correo Electronico</span>
+                    <div style="float:right;"><img id="CheckEmail" alt="" src="/WebResources/new_GIF_Check" /></div>
+                </div>
+            </div>				
+            <div style="clear:both; padding-left:10px;">
+                <div style="width:98%; float:left; background-color: #D4D4D4;" id="toggableLetter" class="divFilters" onclick="SelectedFilter(this.id);">
+                    <img style="padding-left:10px;" alt="Carta Nueva" src="/_imgs/ico_16_4207.gif?ver=1561266035"/><span style="padding-left:2px;" class="textoGenerico">Carta</span>
+                    <div style="float:right;"><img id="CheckLetter" alt="" src="/WebResources/new_GIF_Check" /></div>
+                </div>
+            </div>
+            <div style="clear:both; padding-left:10px;">
+                <div style="width:98%; float:left; background-color: #D4D4D4;" id="toggableAppointment" class="divFilters" onclick="SelectedFilter(this.id);">
+                    <img style="padding-left:10px;" alt="Cita Nueva" src="/_imgs/ico_16_4201.gif?ver=1561266035"/><span style="padding-left:2px;" class="textoGenerico">Cita</span>
+                    <div style="float:right;"><img id="CheckAppointment" alt="" src="/WebResources/new_GIF_Check" /></div>
+                </div>
+            </div>
+            <div style="clear:both; padding-left:10px;">
+                <div style="width:98%; float:left; background-color: #D4D4D4;" id="toggableServiceAppointment" class="divFilters" onclick="SelectedFilter(this.id);">
+                    <img style="padding-left:10px;" alt="Actividad de Servicio Nueva" src="/_imgs/ico_16_4214.gif?ver=1561266035"/><span style="padding-left:2px;" class="textoGenerico">Actividad de Servicio</span>
+                    <div style="float:right;"><img id="CheckServiceAppointment" alt="" src="/WebResources/new_GIF_Check" /></div>
+                </div>
+            </div>
+            <div style="clear:both; padding-left:10px;">
+                <div style="width:98%; float:left; background-color: #D4D4D4;" id="toggableRecurringAppointment" class="divFilters" onclick="SelectedFilter(this.id);">
+                    <img style="padding-left:10px;" alt="Cita Periodica Nueva" src="/_imgs/ico_16_4251.gif?ver=1561266035"/><span style="padding-left:2px;" class="textoGenerico">Cita Periodica</span>
+                    <div style="float:right;"><img id="CheckRecurringAppointment" alt="" src="/WebResources/new_GIF_Check" /></div>
+                </div>
+            </div>
+        </div>
+		<div style="float:left; height:99%; vertical-align:middle; text-align:center; cursor:hand;" onclick="hideShowMenu();" class="tituloTerciario">
+            <p style="font-weight:bold;" id="lateralMenuSwitch">>></p>
+            <div style="cursor:hand; float:left; vertical-align:middle; height:95%; text-align:center;">
+                <p style="cursor:hand;font-weight:bold;text-align:center;padding-left:2px;height:4px;">O</p>
+                <p style="cursor:hand;font-weight:bold;text-align:center;padding-left:2px;height:4px;">P</p>
+                <p style="cursor:hand;font-weight:bold;text-align:center;padding-left:2px;height:4px;">C</p>
+                <p style="cursor:hand;font-weight:bold;text-align:center;padding-left:2px;height:4px;">I</p>
+                <p style="cursor:hand;font-weight:bold;text-align:center;padding-left:2px;height:4px;">O</p>
+                <p style="cursor:hand;font-weight:bold;text-align:center;padding-left:2px;height:4px;">N</p>
+                <p style="cursor:hand;font-weight:bold;text-align:center;padding-left:2px;height:4px;">E</p>
+                <p style="cursor:hand;font-weight:bold;text-align:center;padding-left:2px;height:4px;">S</p>
+            </div>
+		</div>
+		<div id="contentCalendar" title="Contenedor de Calendario" style="width:98%; height:100%; float:left;">
+            <div id="tblCalendarioCustom" style="width:100%; height:99%; border-collapse:collapse; overflow:auto; z-index:0;">
+            </div>
+        </div>
+	</div>
+    <div id="dialogForm" class="dialog"></div>
+	<div id="ReferentePara" class="dialog"></div>
+    <div id="errorDialog" class="dialog"></div>
+    <span style="visibility:hidden;" id="selectedView">divWorking</span><!--Vista con la que se inicializa la Agenda-->
+</body>
+</html>
+<script type="text/javascript" language="javascript">
+    OnLoad();
+</script>

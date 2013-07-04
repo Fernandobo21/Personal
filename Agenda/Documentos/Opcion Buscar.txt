@@ -1,0 +1,22 @@
+Opciones de busqueda de registros por literales:
+
+1- Busqueda sensitiva sobre los registros ya mostrados por la grilla.
+pros: 	no es necesario hacer ninguna otra consulta
+	Visualmente queda perfecto
+contras:Solo se podria buscar sobre los 10 registros mostrados....
+
+2- Busqueda solo cuando le da al boton de la lupa:
+pros: 	Se pueden mostrar los resultados ordenados por nombre (por presicion en el resultado)
+	Se pueden mostrar en varias paginas.
+contras:Las consultas con literales suelen demorar demasiado.
+	El orden mediante el cual se busca va dependiendo de la certeza de la busqueda.
+
+3- Busqueda sensitiva y a base de datos:
+pros:	queda excelente visualmente la busqueda a medida que se va escribiendo.
+	se podria mostrar un desplegable con los resultados parciales.
+contras:cada tecla lanzaria una llamada rest a CRM, lo cual hay que analizar si es mas o menos dinamico.
+	me obligo a usar ajax para que mientras vaya escribiendo vaya modificando la consulta.
+
+4- Cargarse la opcion de buscar
+pros:	no mas consultas rest a CRM.
+contras:limita demasiado al usuario en su busqueda de registros.

@@ -1,0 +1,9 @@
+Hemos desarrollado para la facilidad laboral esta agenda comercial.
+
+Este complemento a el CRM de su organizacion le permitira manejar con facilidad todas sus actividades aplicando metodologias novedosas.
+
+Actualize de manera rapida y sencilla todas sus actividades mediante la metodologia conocida como "Drag and Drop". Con esta metodologia usted podra coger cualquier actividad que tenga pendiente y desplazarla directamente a la fecha en la que quiera que se actualice.
+
+Con el menu simple de creacion de actividad usted podra, clickando en una fecha en particular y seleccionando algunos datos basicos, crear una nueva actividad de cualquier tipo.
+Si desea agregar mas datos de los que predispone el formulario de simple, tiene el acceso al fomrulario completo normal de CRM. 
+

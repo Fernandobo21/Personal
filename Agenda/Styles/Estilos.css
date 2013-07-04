@@ -1,0 +1,397 @@
+﻿BODY
+{
+    FONT-FAMILY: Segoe UI, Tahoma, Arial; 
+    FONT-SIZE: 11px;
+    BACKGROUND-COLOR: transparent;
+    SCROLLBAR-ARROW-COLOR: #3b3b3b;
+	SCROLLBAR-FACE-COLOR: #e9edf1;
+	SCROLLBAR-DARKSHADOW-COLOR: #a5acb5;
+	SCROLLBAR-BASE-COLOR: #a5acb5;
+	SCROLLBAR-HIGHLIGHT-COLOR: #e9edf1;
+	SCROLLBAR-SHADOW-COLOR: #e9edf1;
+	SCROLLBAR-TRACK-COLOR: #e3e8ed;
+	SCROLLBAR-3DLIGHT-COLOR: #a5acb5;
+}
+.tablePrincipal
+{
+	border:solid 1px #A5ACB5;
+	height:479px;
+	width:100%;
+    clear: none;
+}
+.tableRow
+{
+    width:100%;
+	clear: both;
+    margin-bottom: 0px;
+}
+.tableColumn
+{
+    float: left;
+	padding: 5px;
+}
+.tableOpciones
+{
+     background-color:#E0E4E9;
+     border:solid 1px #A5ACB5;
+     height:100%;
+	 width:100%;
+	 float: left;
+}
+.tableMiniCalendar
+{
+     background-color:#E0E4E9;
+     border:solid 1px #A5ACB5;
+     height:100%;
+	 width:100%;
+	 float: left;
+}
+.tableCalendar
+{
+     background-color:#E6EAEE;
+     height:100%;
+	 width:100%;
+	 float: left;
+}
+.tituloPrincipal 
+{
+	COLOR: #3b3b3b;
+	MARGIN-TOP: 2px; 
+	PADDING-LEFT: 2px; 
+	PADDING-RIGHT: 2px; 
+	HEIGHT: 24px; 
+	FONT-SIZE: 14px; 
+	FONT-WEIGHT: normal	
+}
+.tituloSecundario 
+{
+	FONT-FAMILY: Segoe UI, Tahoma, Arial; 
+	FONT-SIZE: 14px; 
+	FONT-WEIGHT: bold;
+	MARGIN-TOP: 2px; 
+	PADDING-LEFT: 2px; 
+	PADDING-RIGHT: 2px; 
+	HEIGHT: 8px; 
+}
+.tituloTerciario:hover
+{
+    background-color: #D7EBF9;
+    FONT-WEIGHT: bold;
+    color: #0072C6;
+}
+
+#draggableTask, #draggableFax, #draggablePhoneCall, #draggableMail, #draggableServiceAppointment, #draggableAppointment, #draggableLetter, #draggableTasks
+{
+    width: 15px; 
+    height: 15px; 
+    padding: 0.5em; 
+    cursor:url("Imagenes/openhand.cur"), move;
+}
+.link, .linkDeshabilitado
+{
+	BORDER-BOTTOM: #e9edf1 1px solid; 
+	BORDER-LEFT: #e9edf1 1px solid; 
+	BORDER-TOP: #e9edf1 1px solid; 
+	BORDER-RIGHT: #e9edf1 1px solid;
+	TEXT-OVERFLOW: ellipsis; 
+	DISPLAY: block;
+	HEIGHT: 100%;
+	OVERFLOW: hidden;
+	CURSOR: hand;
+	text-align:center;
+}
+.link:hover
+{
+	BORDER-BOTTOM: #61A6E4 1px solid; 
+	BORDER-LEFT: #61A6E4 1px solid; 
+	BORDER-TOP: #61A6E4 1px solid; 
+	BORDER-RIGHT: #61A6E4 1px solid; 
+	PADDING-BOTTOM: 0px; 
+	BACKGROUND-COLOR: #a7cdf0; 
+	PADDING-LEFT: 0px; 
+	PADDING-RIGHT: 0px; 
+	PADDING-TOP: 0px;
+	text-align:center;
+}
+.textoGenerico
+{
+	COLOR: #3B3B3B;
+}
+.checkBox
+{
+	WIDTH: 16px;
+	CURSOR: hand;
+	COLOR: #3B3B3B;
+}
+.tr
+{
+    background-color:#E6EAEE;
+    border:1px solid #569DE1;
+    cursor:hand;
+}
+.tr:hover
+{
+    background-image:url(/WebResources/new_PNG_FondoLink);
+    background-position:center;
+    border:1px solid #569DE1;
+    cursor:hand;
+}
+.divFilters
+{
+    border:1px solid transparent;
+}
+.divFiltersTable
+{
+    border:1px solid transparent;
+}
+.divFilters:hover
+{
+    background-image:url(/WebResources/new_PNG_FondoLink);
+    background-position:center;
+    border:1px solid #569DE1;
+    cursor:hand;
+}
+.divFiltersTable:hover
+{
+    background-image:url(/WebResources/new_PNG_FondoLink);
+    background-position:center;
+    border:1px solid #569DE1;
+    cursor:hand;
+}
+/*
+.divSelector
+{
+    float: left;
+    border-top: 1px solid #e9edf1;
+    border-left: 1px solid #e9edf1;
+    border-right: 1px solid #e9edf1;
+    cursor:hand;
+    padding-left:2px;
+    padding-right:2px;
+    padding-top: 2px;
+    height:25px;
+    width:7%;
+}
+.divSelected
+{
+    background-image:url(/Imagenes/FondoOpciones.png);
+	float: left;
+    border-top: 1px solid #A9A9A9;
+    border-left: 1px solid #A9A9A9;
+    border-right: 1px solid #A9A9A9;
+    border-bottom: 1px solid #FFFFFF;
+    padding-left:2px;
+    padding-right:2px;
+    padding-top: 2px;
+    height:26px;
+    width:7%;
+    z-index:1;
+}
+.divSelector:hover
+{
+    background-position:center;
+    background-color: #F3F7FB;
+    border-top: 1px solid #A9A9A9;
+    border-left:1px solid #A9A9A9;
+    border-right: 1px solid #A9A9A9;
+    border-bottom: 1px solid #A9A9A9;
+    cursor:hand;
+    height:25px;
+    width:7%;
+}
+*/
+.divSelector
+{
+	padding-left:5px; 
+	padding-top:2px;
+    border-top: 1px solid #e9edf1;
+    border-left: 1px solid #e9edf1;
+    border-right: 1px solid #e9edf1;
+    cursor:hand;
+	height:25px;
+	z-index:1;
+}
+.divSelected
+{
+    background-image:url(/Imagenes/FondoOpciones.png);
+    border-top: 1px solid #A9A9A9;
+    border-left: 1px solid #A9A9A9;
+    border-right: 1px solid #A9A9A9;
+    border-bottom: 1px solid #FFFFFF;
+	padding-left:5px; 
+	padding-top:2px;
+    height:26px;
+    z-index:1;
+}
+.divSelector:hover
+{
+    background-position:center;
+    background-color: #F3F7FB;
+    border-top: 1px solid #A9A9A9;
+    border-left:1px solid #A9A9A9;
+    border-right: 1px solid #A9A9A9;
+    border-bottom: 1px solid #A9A9A9;
+    cursor:hand;
+    height:25px;
+	padding-left:5px; 
+	padding-top:2px;
+}
+.dialog
+{
+    border: solid 1px #A5ACB5;
+    background-color:#D9DEE4;
+    width:100%;
+}
+.droppable
+{
+    width:100%;
+    height:100%;
+}
+.calendarDayHover
+{
+    background-color:#A5BEE6;
+    width:100%;
+    height:100%;
+}
+/*
+.calendarDayActive
+{
+    background-color:#A5BEC8;
+    width:100%;
+    height:100%;
+}
+*/
+div.fila
+{
+    width:100%;
+	clear: both;
+    height: 24px;
+    margin-bottom: 0px;
+}
+div.col_titulo
+{
+	float: left;
+	padding: 5px;
+}
+div.col_subtitulo
+{
+	float: left;
+}
+div.col
+{
+	float: left;
+	padding: 5px;
+	border-color: #F0E0A0;
+	border-style: solid;
+	border-right-width: 0px;
+	border-left-width: 0px;
+	border-top-width: 0px;
+	border-bottom-width: 1px;
+}
+ol
+{
+    color: #e9edf1;
+    list-style-type:upper-roman;
+}
+.selectActivitie
+{
+    cursor:hand;
+    border-top: 1px solid #D9DEE4;
+    border-left:1px solid #D9DEE4;
+    border-right: 1px solid #D9DEE4;
+    border-bottom: 1px solid #D9DEE4;    
+}
+.selectedActivitie
+{
+    background-image:url(/WebResources/new_PNG_FondoOpciones);
+    border-top: 1px solid #A9A9A9;
+    border-left:1px solid #A9A9A9;
+    border-right: 1px solid #A9A9A9;
+    border-bottom: 1px solid #A9A9A9;
+    cursor:hand;
+}
+.selectActivitie:hover
+{
+    background-image:url(/WebResources/new_PNG_FondoOpciones);
+    background-position:center;
+    border-top: 1px solid #A9A9A9;
+    border-left:1px solid #A9A9A9;
+    border-right: 1px solid #A9A9A9;
+    border-bottom: 1px solid #A9A9A9;
+    cursor:hand;
+}
+.calendar
+{
+    background-color:White;
+}
+.calendarSelected
+{
+    background-color:#EEEEEE;
+}
+.calendar:hover
+{
+    background-color:#EEEEEE;
+    cursor:hand;
+}
+.button
+{
+    background-image:url(/WebResources/new_PNG_BotonDesHabilitado); 
+    background-position:center; 
+    border: 1px solid black;
+    color:White;
+}
+.button:hover
+{
+    background-image:url(/WebResources/new_PNG_BotonHabilitado); 
+    background-position:center; 
+    border: 1px solid black;
+    cursor:hand;
+}
+.MarcoPrincipal
+{
+	border:solid 1px blue; 
+	height:100%; 
+	width:100%;
+}
+.FloatLeft
+{
+	float:left;
+}
+.buscarButton
+{
+    background-image:url(/WebResources/new_PNG_BuscarDesHabilitado);
+    background-position:center; 
+    border: 1px solid black;
+}
+.buscarButtonDisable
+{
+    background-image:url(/WebResources/new_PNG_BuscarDisabled);
+    background-position:center; 
+    border: 1px solid black;
+}
+.buscarButton:hover
+{
+	background-image:url(/WebResources/new_PNG_BuscarHabilitado);
+    background-position:center; 
+    border: 1px solid black;
+}
+.curvedBorders {
+    /*para Firefox*/
+    -moz-border-radius: 15px 15px 15px 15px;
+    /*para Safari y Chrome*/
+    -webkit-border-radius: 15px 15px 15px 15px;
+    /*para IE */
+    behavior:url(Estilos/border.htc);
+    /* para Opera */
+    border-radius: 15px 15px 15px 15px;
+}
+.activityDiv
+{
+    background-color:#f5deb3;
+    overflow:hidden;
+    border:solid 1px black;
+}
+.activityDiv:hover
+{
+    cursor:url("Imagenes/openhand.cur");
+}
